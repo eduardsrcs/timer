@@ -1,0 +1,42 @@
+
+
+.timebuttons, #time{
+  display: flex;
+  justify-content: space-between;
+}
+
+.timebutton{
+  width: 76px;
+  height: 32px;
+  line-height: 32px;
+  border: 1px solid lightseagreen;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.timebutton, #time>div, #timerswitch{
+  text-align: center;
+}
+#timer{
+  width: 320px;
+  user-select: none;
+
+}
+
+#time>div{
+  width: 64px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 40px;
+}
+
+#timerswitch{
+  box-sizing: border-box;
+  margin-top: 4px;
+  width: 320px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 24px;
+  border: 1px solid lightseagreen;
+  border-radius: 3px;
+}
