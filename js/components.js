@@ -1,5 +1,3 @@
-// const timerVideo = document.getElementById('timervideo')
-
 const timer = {
   data(){
     return{
@@ -79,11 +77,7 @@ const uarrows = {
       <div class="timebutton" @click="$emit('updateTime', 10, false)">+</div>
       <div class="timebutton" @click="$emit('updateTime', 1, false)">+</div>
     </div>
-  `,
-  methods: {
-    
-  }
-
+  `
 }
 
 const darrows = {
