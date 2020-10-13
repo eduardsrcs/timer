@@ -17,10 +17,10 @@
 .timebutton, #time>div, #timerswitch{
   text-align: center;
 }
+
 #timer{
   width: 320px;
   user-select: none;
-
 }
 
 #time>div{
