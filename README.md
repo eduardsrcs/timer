@@ -5,3 +5,5 @@ This page uses Vue library as JS engine. It's very simple and contains just 2 fi
 In *js* folder is placed vue library too. This is version 3 Vue library code. This done to make completelly independent solution.
 
 There are classic methods used in this solution.
+
+By cloning this repo you get all files to run it immediatelly.
