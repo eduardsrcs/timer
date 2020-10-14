@@ -53,7 +53,7 @@ const timer = {
     setInterval(()=>{
       const timerVideo = document.getElementById('timervideo')
       let t = new Date()
-      if(this.tSwitch && app.$data.hours == t.getHours() && app.$data.minutes == t.getMinutes()){
+      if(this.tSwitch && this.hours == t.getHours() && this.minutes == t.getMinutes()){
         if(timerVideo.paused){
           timerVideo.currentTime = 0
           timerVideo.play()
