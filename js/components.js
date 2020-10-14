@@ -1,8 +1,7 @@
 const timer = {
   data(){
     return{
-      switch: false,
-      swText: 'Off',
+      tSwitch: false,
       hours: 0,
       minutes: 0
     }
@@ -16,7 +15,7 @@ const timer = {
       <uparrows @updateTime="updateTime"></uparrows>
       <timesection :hrs="hours" :mns="minutes"></timesection>
       <downarrows @updateTime="updateTime"></downarrows>
-      <timerswitch @switchTimer="switchTimer" :swtext="swText"></timerswitch>
+      <timerswitch @switchTimer="switchTimer" :swtext="tSwitch"></timerswitch>
     </div>`,
   methods: {
     updateTime(time, hours){
@@ -43,19 +42,18 @@ const timer = {
       localStorage.setItem('timerMinutes', this.minutes)
     },
     switchTimer(){
-      this.switch = !this.switch
-      this.swText = this.switch ? 'On' : 'Off'
-      if(!this.switch){
+      this.tSwitch = !this.tSwitch
+      if(!this.tSwitch){
         const timerVideo = document.getElementById('timervideo')
         timerVideo.pause()
       }
     }
   },
   mounted(){
-    setInterval(function(){
+    setInterval(()=>{
       const timerVideo = document.getElementById('timervideo')
       let t = new Date()
-      if(app.$data.switch && app.$data.hours == t.getHours() && app.$data.minutes == t.getMinutes()){
+      if(this.tSwitch && app.$data.hours == t.getHours() && app.$data.minutes == t.getMinutes()){
         if(timerVideo.paused){
           timerVideo.currentTime = 0
           timerVideo.play()
@@ -106,5 +104,5 @@ const timesection = {
 
 const timerSwitch = {
   props: ['swtext'],
-  template: `<div id="timerswitch" @click="$emit('switchTimer')">{{swtext}}</div>`,
+  template: `<div id="timerswitch" @click="$emit('switchTimer')">{{swtext ? 'On' : 'Off'}}</div>`,
 }
