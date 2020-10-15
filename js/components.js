@@ -62,14 +62,14 @@ const timer = {
         timerVideo.pause()
       }
     }, 10000)
-    this.$data.hours = parseInt(localStorage.getItem('timerHours')) || 0
+    this.$data.hours = parseInt(localStorage.getItem('timerHours')) || 12
     this.$data.minutes = parseInt(localStorage.getItem('timerMinutes')) || 0
   }
 }
 
 const uarrows = {
   template: `
-    <div id="uparrows" class="timebuttons">
+    <div class="timebuttons">
       <div class="timebutton" @click="$emit('updateTime', 10, true)">+</div>
       <div class="timebutton" @click="$emit('updateTime', 1, true)">+</div>
       <div class="timebutton" @click="$emit('updateTime', 10, false)">+</div>
@@ -80,7 +80,7 @@ const uarrows = {
 
 const darrows = {
   template: `
-    <div id="downarrows" class="timebuttons">
+    <div class="timebuttons">
       <div class="timebutton" @click="$emit('updateTime', -10, true)">-</div>
       <div class="timebutton" @click="$emit('updateTime', -1, true)">-</div>
       <div class="timebutton" @click="$emit('updateTime', -10, false)">-</div>
