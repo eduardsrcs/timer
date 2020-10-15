@@ -104,5 +104,5 @@ const timesection = {
 
 const timerSwitch = {
   props: ['swtext'],
-  template: `<div id="timerswitch" @click="$emit('switchTimer')">{{swtext ? 'On' : 'Off'}}</div>`,
+  template: `<div id="timerswitch" :class="{'swon': swtext}" @click="$emit('switchTimer')">{{swtext ? 'On' : 'Off'}}</div>`,
 }

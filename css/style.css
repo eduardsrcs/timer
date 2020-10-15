@@ -18,6 +18,12 @@
   text-align: center;
 }
 
+.swon{
+  background-color: #070;
+  color: antiquewhite;
+  transition: .3s;
+}
+
 #timer{
   width: 320px;
   user-select: none;
@@ -40,3 +46,4 @@
   border: 1px solid lightseagreen;
   border-radius: 3px;
 }
+
