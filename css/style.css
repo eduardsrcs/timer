@@ -1,6 +1,6 @@
 
 
-.timebuttons, #time{
+.timebuttons, #timertime{
   display: flex;
   justify-content: space-between;
 }
@@ -23,7 +23,7 @@
   color: whitesmoke;
 }
 
-.timebutton, #time>div, #timerswitch{
+.timebutton, #timertime>div, #timerswitch{
   text-align: center;
 }
 
@@ -42,7 +42,8 @@
   user-select: none;
 }
 
-#time>div{
+#timertime>div{
+  font-family:  Tahoma, "Helvetica Neue", Helvetica, sans-serif;
   width: 64px;
   height: 60px;
   line-height: 60px;

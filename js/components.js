@@ -91,7 +91,7 @@ const darrows = {
 
 const timesection = {
   template: `
-    <div id="time">
+    <div id="timertime">
       <div>{{parseInt(hrs/10)}}</div>
       <div>{{hrs%10}}</div>
       <div>:</div>
