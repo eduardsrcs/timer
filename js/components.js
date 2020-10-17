@@ -6,17 +6,6 @@ const timer = {
       minutes: 0
     }
   },
-  template: `
-    <video id="timervideo" width="320" height="240" volume=".1">
-      <source src="movie.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div id="controls">
-      <uparrows @updateTime="updateTime"></uparrows>
-      <timesection :hrs="hours" :mns="minutes"></timesection>
-      <downarrows @updateTime="updateTime"></downarrows>
-      <timerswitch @switchTimer="switchTimer" :swtext="tSwitch"></timerswitch>
-    </div>`,
   methods: {
     updateTime(time, hours){
       if(hours){
@@ -64,7 +53,18 @@ const timer = {
     }, 10000)
     this.$data.hours = parseInt(localStorage.getItem('timerHours')) || 12
     this.$data.minutes = parseInt(localStorage.getItem('timerMinutes')) || 0
-  }
+  },
+  template: `
+    <video id="timervideo" width="320" height="240" volume=".1">
+      <source src="movie.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div id="controls">
+      <uparrows @updateTime="updateTime"></uparrows>
+      <timesection :hrs="hours" :mns="minutes"></timesection>
+      <downarrows @updateTime="updateTime"></downarrows>
+      <timerswitch @switchTimer="switchTimer" :swtext="tSwitch"></timerswitch>
+    </div>`
 }
 
 const uarrows = {
@@ -90,6 +90,7 @@ const darrows = {
 }
 
 const timesection = {
+  props: ['hrs', 'mns'],
   template: `
     <div id="timertime">
       <div>{{parseInt(hrs/10)}}</div>
@@ -98,11 +99,12 @@ const timesection = {
       <div>{{parseInt(mns/10)}}</div>
       <div>{{mns%10}}</div>
     </div>
-  `,
-  props: ['hrs', 'mns']
+  `
 }
 
 const timerSwitch = {
-  props: ['swtext'],
+  props: {
+    swtext: Boolean
+  },
   template: `<div id="timerswitch" :class="{'swon': swtext}" @click="$emit('switchTimer')">{{swtext ? 'On' : 'Off'}}</div>`,
 }
